@@ -1,0 +1,21 @@
+package ok.team.repository;
+
+import ok.team.entity.ImageModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+/**
+ * Created by Oybek Karimjanov
+ * Date : 5.20.2022
+ * Project Name : instazoo
+ */
+@Repository
+public interface ImageRepository extends JpaRepository<ImageModel, Long> {
+
+    Optional<ImageModel> findByUserId(Long userId);
+
+    Optional<ImageModel> findByPostId(Long postId);
+
+}
