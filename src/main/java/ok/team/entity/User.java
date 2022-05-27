@@ -45,6 +45,7 @@ public class User implements UserDetails {
     @ElementCollection(targetClass = ERole.class)
     @CollectionTable(name = "user_role",
     joinColumns = @JoinColumn(name = "user_id"))
+    @Enumerated(EnumType.STRING)
     private Set<ERole> roles = new HashSet<>();
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user", orphanRemoval = true)
